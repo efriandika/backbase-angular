@@ -1,9 +1,23 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false
+  /**
+   * Env mode
+   */
+  production: false,
+
+  /**
+   * Application Name
+   */
+  appName: 'City Weather App',
+
+  /**
+   * Backend Base URL
+   */
+  backendBaseURL: 'https://api.openweathermap.org/data/2.5',
+
+  /**
+   * API Key for Backend API Request
+   */
+  backendBaseApiKey: 'd91fa5e792320c4bd3a18bb475e1c7ea',
 };
 
 /*

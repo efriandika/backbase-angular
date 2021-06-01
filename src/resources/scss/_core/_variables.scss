@@ -1,0 +1,41 @@
+// Colour
+$primary:                     #181e41;
+$secondary:                   #c12121;
+
+
+// Spacing
+$spacer: 1rem !default;
+
+
+// Body
+// Settings for the `<body>` element.
+$body-bg:                   #f7f6f9;
+$body-color:                #212529;
+
+
+// Typography
+$font-family-sans-serif:      "Quicksand", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-brand:           "Pattaya", sans-serif;
+
+$font-weight-semibold:        600;
+
+$font-size-base:              1rem;
+
+$tiny-font-size:              75%;
+$small-font-size:             85%;
+$big-font-size:               112%;
+$large-font-size:             150%;
+$xlarge-font-size:            170%;
+
+
+// Navbar
+$navbar-padding-y:                  0.75rem;
+$navbar-padding-x:                  null !default;
+
+$navbar-nav-link-padding-x:         .5rem !default;
+$navbar-brand-font-size:            $font-size-base * 1.5;
+
+
+// Buttons
+$btn-focus-width:              0;
+$btn-focus-box-shadow:         0;

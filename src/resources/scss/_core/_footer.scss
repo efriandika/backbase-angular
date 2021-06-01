@@ -1,0 +1,28 @@
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+
+  .footer-text {
+    font-size: 90%;
+  }
+
+  .nav {
+    font-size: 90%;
+    margin-bottom: 1rem;
+
+    a {
+      color: $secondary;
+    }
+  }
+
+  .author {
+    font-size: 1.2rem;
+    font-family: $font-family-brand;
+
+    a {
+      color: $gray-600;
+      text-decoration: none;
+    }
+  }
+}
