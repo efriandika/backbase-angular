@@ -1,0 +1,42 @@
+.container {
+  height: 100vh;
+}
+
+.error-code,
+.error-description {
+  line-height: 1;
+}
+.error-code {
+  font-size: 100px;
+}
+.error-description {
+  font-size: 28px;
+}
+.error-bg-skew {
+  position: absolute;
+  top: 0;
+  right: -50vw;
+  bottom: 0;
+  z-index: -1;
+  width: 200vw;
+}
+[dir=rtl] .error-bg-skew {
+  right: auto;
+  left: -50vw;
+}
+
+@media (min-width: 768px) {
+  .error-bg-skew {
+    right: 0;
+    width: 100vw;
+    -webkit-transform: skew(-10deg);
+    transform: skew(-10deg);
+  }
+
+  [dir=rtl] .error-bg-skew {
+    right: auto;
+    left: 0;
+    -webkit-transform: skew(10deg);
+    transform: skew(10deg);
+  }
+}
