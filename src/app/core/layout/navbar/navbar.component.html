@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand navbar-light navbar-weather">
+  <div class="container">
+    <a [routerLink]="'/'" class="navbar-brand text-brand text-primary">{{ appName }}</a>
+
+    <div class="d-flex">
+      F&deg;
+      <div class="form-check form-switch ms-2">
+        <input name="unit" class="form-check-input" type="checkbox" aria-checked="true" checked aria-label="Metric Units Switcher" />
+      </div>
+      C&deg;
+    </div>
+  </div>
+</nav>
