@@ -1,0 +1,27 @@
+$defaultBaseColor: #efefef;
+$defaultHighlightColor: #f5f5f5;
+
+.skeleton {
+  background-color: $defaultBaseColor;
+  background-image: linear-gradient(90deg, $defaultBaseColor, $defaultHighlightColor, $defaultBaseColor);
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1;
+  width: 100%;
+  animation: background-animation 1.2s ease-in-out infinite;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}

@@ -1,0 +1,13 @@
+<span role="status" aria-live="assertive" aria-label="Loading content...">
+  <span
+    class="skeleton"
+    *ngFor="let i of loops"
+    [class]="className"
+    [class.circle]="width != null && height != null && circle"
+    [style]="style"
+    [style.width]="width"
+    [style.height]="height"
+  >
+    &zwnj; &zwnj;
+  </span>
+</span>
