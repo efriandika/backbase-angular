@@ -13,10 +13,7 @@ const initialState: AppState = {
 };
 
 const addCityReducer = (state: AppState, payload: { city: string }) => {
-  const cities = state.cities;
-  cities.push(payload.city);
-
-  return { ...state, cities }
+  return { ...state, cities: [...state.cities, payload.city] };
 };
 
 const appReducer = createReducer(

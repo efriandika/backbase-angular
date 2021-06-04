@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/app/app-state.model';
 import { WeatherState } from '../store/weather/weather-state.model';
+import { addCity } from '../store/app/app.actions';
 
 /**
  * To handle dasboard page
@@ -24,5 +25,9 @@ export class DashboardComponent implements OnInit {
     this.units$ = store.select((state) => state.weather.units);
   }
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
+
+  public handleNewCity(cityName: string) {
+    this.store.dispatch(addCity({ city: cityName }));
+  }
 }

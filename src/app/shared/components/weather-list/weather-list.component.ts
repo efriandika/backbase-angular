@@ -38,7 +38,7 @@ export class WeatherListComponent implements OnInit {
   /**
    * It will be fired When new city form submitted
    */
-  @Output() newCitySubmit = new EventEmitter();
+  @Output() newCitySubmit = new EventEmitter<string>();
 
   public newCityForm!: FormGroup;
 
@@ -60,7 +60,10 @@ export class WeatherListComponent implements OnInit {
    * Fired when new city form submitted
    */
   public handleNewCityForm() {
-    this.newCitySubmit.emit(this.newCityForm.value);
+    if (this.newCityForm.get('cityName') != null && this.newCityForm.get('cityName')?.value != null) {
+      this.newCitySubmit.emit(this.newCityForm.get('cityName')?.value);
+      this.newCityForm.reset();
+    }
   }
 
   /**
