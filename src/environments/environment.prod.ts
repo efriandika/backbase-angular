@@ -17,5 +17,5 @@ export const environment = {
   /**
    * API Key for Backend API Request
    */
-  backendBaseApiKey: 'd91fa5e792320c4bd3a18bb475e1c7ea',
+  backendBaseApiKey: 'ba25fbaafea57fe56e578608c5e9f30f',
 };
