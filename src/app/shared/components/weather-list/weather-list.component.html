@@ -1,6 +1,6 @@
 <div class="row" [class]="className">
   <div class="col-md-4 mb-4" *ngFor="let city of cities">
-    <app-weather [cityName]="city" [units]="units" (click)="handleCityClick($event)"></app-weather>
+    <app-weather [cityName]="city" [units]="units" (cityClick)="handleCityClick($event)"></app-weather>
   </div>
 
   <div class="col-md-4 mb-4">

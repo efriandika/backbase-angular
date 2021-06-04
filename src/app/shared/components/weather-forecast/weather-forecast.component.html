@@ -1,0 +1,55 @@
+<div class="modal-header">
+  <h5 class="modal-title">Weather Forecast</h5>
+  <button type="button" class="btn-close" aria-label="Close" [disabled]="loading" (click)="activeModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+
+  <div *ngIf="loading"  class="weather-container">
+    <div class="city-name"><app-skeleton width="50%" height="50px"></app-skeleton></div>
+    <div class="line-height-condenced text-muted text-tiny">
+      <div><app-skeleton width="30%" height="20px"></app-skeleton></div>
+      <div class="font-weight-semibold"><app-skeleton width="60%" height="20px"></app-skeleton></div>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && data != null && error == null" class="weather-container" [attr.aria-label]="'{{ name }}\'s forecast weather'">
+    <img *ngIf="getWeatherIconURL() != null" class="weather-icon" [src]="getWeatherIconURL()" [alt]="data.current.weather[0].main"  />
+
+    <div class="city-name">{{ name }}</div>
+    <div class="line-height-condenced text-muted text-tiny">
+      <div>Updated at:</div>
+      <div class="font-weight-semibold">{{ data.current.dt | unixTimestampTo: 'datetime' }}</div>
+    </div>
+
+    <div class="mt-4 text-tiny">
+      <div class="font-weight-semibold">Forecast (Next 5 Hours)</div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Temp</th>
+          <th scope="col">Feels Like</th>
+          <th scope="col">Wind Speed</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let hourly of data.hourly.slice(1, 6)">
+          <td>{{ hourly.dt | unixTimestampTo: 'time' }}</td>
+          <td>{{ hourly.temp | temperatureUnit: units }}</td>
+          <td>{{ hourly.feels_like | temperatureUnit: units }}</td>
+          <td>{{ hourly.wind_speed | speedUnit: units }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && error != null" class="weather-container text-danger">
+    Data cannot be loaded from the server.<br />
+    Error: {{ error }}
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" [disabled]="loading" (click)="activeModal.dismiss()">Close</button>
+</div>

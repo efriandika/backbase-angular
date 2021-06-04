@@ -6,6 +6,9 @@ import { WeatherListComponent } from './components/weather-list/weather-list.com
 import { SpeedUnitPipe } from './pipes/speed-unit.pipe';
 import { TemperatureUnitPipe } from './pipes/temperature-unit.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WeatherForecastComponent } from './components/weather-forecast/weather-forecast.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { UnixTimestampToPipe } from './pipes/unix-timestamp-to.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     WeatherComponent,
     WeatherListComponent,
     SpeedUnitPipe,
-    TemperatureUnitPipe
+    TemperatureUnitPipe,
+    WeatherForecastComponent,
+    UnixTimestampToPipe
   ],
   exports: [
     SkeletonComponent,
@@ -22,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    NgbModalModule,
   ]
 })
 export class SharedModule {}

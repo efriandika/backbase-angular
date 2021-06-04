@@ -32,7 +32,7 @@ export class WeatherComponent implements OnInit, OnChanges {
   /**
    * It will be fired When weather box is clicked
    */
-  @Output() click = new EventEmitter<WeatherClickPayload>();
+  @Output() cityClick = new EventEmitter<WeatherClickPayload>();
 
   public data: Weather | undefined;
   public loading: boolean = false;
@@ -81,7 +81,7 @@ export class WeatherComponent implements OnInit, OnChanges {
    */
   public handleClick(): void {
     if (this.data != null) {
-      this.click.emit({
+      this.cityClick.emit({
         lon: this.data.coord.lon,
         lat: this.data.coord.lat,
         name: this.data.name

@@ -1,0 +1,16 @@
+.weather-container {
+  position: relative;
+}
+
+.city-name {
+  font-size: 2rem;
+  margin-bottom: .3rem;
+  font-weight: 700;
+  color: var(--bs-primary);
+}
+
+.weather-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

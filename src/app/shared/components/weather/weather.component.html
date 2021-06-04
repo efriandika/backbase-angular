@@ -17,7 +17,7 @@
 </div>
 
 <div *ngIf="!loading && data != null && error == null" class="weather-container cursor-pointer" [class]="className" (click)="handleClick()">
-  <img *ngIf="getWeatherIconURL() != null" class="weather-icon" [src]="getWeatherIconURL()" alt={data.weather[0].main}  />
+  <img *ngIf="getWeatherIconURL() != null" class="weather-icon" [src]="getWeatherIconURL()" [alt]="data.weather[0].main"  />
 
   <div class="temperature">{{ data.main.temp | temperatureUnit: units }}</div>
   <div class="mb-3 line-height-condenced">
