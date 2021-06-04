@@ -1,0 +1,20 @@
+<div class="row" [class]="className">
+  <div class="col-md-4 mb-4" *ngFor="let city of cities">
+    <app-weather [cityName]="city" [units]="units" (click)="handleCityClick($event)"></app-weather>
+  </div>
+
+  <div class="col-md-4 mb-4">
+    <div class="new-city-form">
+      <form [formGroup]="newCityForm" (submit)="handleNewCityForm()">
+        <div class="mb-3">
+          <label for="new-city-name" class="form-label">Add New City</label>
+          <input type="text" class="form-control" formControlName="cityName" id="new-city-name" placeholder="Eg: Paris" />
+        </div>
+
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary" [disabled]="newCityForm.invalid" aria-label="Add New City Button">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

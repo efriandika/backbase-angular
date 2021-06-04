@@ -47,7 +47,7 @@ export class SkeletonComponent implements OnChanges {
   constructor() {
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  public ngOnChanges(changes: SimpleChanges): void {
     if (changes.count != null) {
       this.loops = new Array(this.count);
     }

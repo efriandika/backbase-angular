@@ -5,8 +5,9 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './http/interceptors/auth.interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
 
 /** Http interceptor providers */
 export const httpInterceptorProviders = [
@@ -31,7 +32,9 @@ export const httpInterceptorProviders = [
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     LayoutComponent,

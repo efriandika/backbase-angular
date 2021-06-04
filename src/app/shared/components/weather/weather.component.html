@@ -1,0 +1,42 @@
+<div *ngIf="loading" class="weather-container" [class]="className">
+  <div class="temperature"><app-skeleton width="40%" height="46px" class="mb-2"></app-skeleton></div>
+
+  <div class="mb-3 line-height-condenced">
+    <div class="city"><app-skeleton width="45%"></app-skeleton></div>
+    <div class="country"><app-skeleton width="30%"></app-skeleton></div>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <div title="Humidity">
+      <app-skeleton width="55px"></app-skeleton>
+    </div>
+    <div title="Wind Speed">
+      <app-skeleton width="55px"></app-skeleton>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!loading && data != null && error == null" class="weather-container cursor-pointer" [class]="className" (click)="handleClick()">
+  <img *ngIf="getWeatherIconURL() != null" class="weather-icon" [src]="getWeatherIconURL()" alt={data.weather[0].main}  />
+
+  <div class="temperature">{{ data.main.temp | temperatureUnit: units }}</div>
+  <div class="mb-3 line-height-condenced">
+    <div class="city">{{ data.name }}</div>
+    <div class="country">{{ data.sys.country }}</div>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <div title="Humidity">
+      <i class="bi bi-droplet" role="img" aria-label="Humidity"></i> {{ data.main.humidity }}%
+    </div>
+    <div title="Wind Speed">
+      <i class="bi bi-wind" role="img" aria-label="Wind Speed"></i> {{ data.wind.speed | speedUnit: units }}
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="!loading && error != null" class="weather-container text-danger" [class]="className">
+  Data cannot be loaded from the server.<br />
+  Error: {{ error }}
+</div>

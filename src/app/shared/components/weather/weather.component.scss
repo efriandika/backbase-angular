@@ -1,0 +1,36 @@
+$background: #FFFFFF;
+
+.weather-container {
+  background-color: $background;
+  width: 100%;
+  height: 170px;
+  padding: 1rem;
+  border-radius: .9rem;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .098);
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .098);
+  }
+}
+
+.weather-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.temperature {
+  font-size: 2.7rem;
+}
+
+.city {
+  font-weight: 700;
+}
+
+.country {
+  color: #adb5bd;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 80%;
+}
