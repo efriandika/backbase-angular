@@ -96,11 +96,12 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
+              "src/favicon-32x32.png",
+              "src/apple-touch-icon.png",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/resources/scss/style.scss"
             ],
             "scripts": []
           }
