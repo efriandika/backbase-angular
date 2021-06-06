@@ -1,13 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WeatherListComponent } from './weather-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
-describe('WeatherListComponent', () => {
+describe('WeatherListComponent Testing', () => {
   let component: WeatherListComponent;
   let fixture: ComponentFixture<WeatherListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule],
       declarations: [ WeatherListComponent ]
     })
     .compileComponents();

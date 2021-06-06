@@ -25,8 +25,8 @@ export class WeatherForecastService {
    */
   public findOne(lon: number, lat: number, units = 'metric'): Observable<WeatherForecast> {
     const params = {
-      lat,
       lon,
+      lat,
       units,
       exclude: 'minutely,daily,alerts',
     };

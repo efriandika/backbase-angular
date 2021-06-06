@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';
 
-describe('AboutComponent', () => {
+describe('AboutComponent Testing', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
 
@@ -21,5 +21,11 @@ describe('AboutComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have text "find me on"', () => {
+    const bannerElement: HTMLElement = fixture.nativeElement;
+    const el = bannerElement.querySelector('.container')!;
+    expect(el.textContent).toMatch(/find me on/i);
   });
 });
